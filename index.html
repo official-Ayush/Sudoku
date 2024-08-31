@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="Script.js"></script>
+  </head>
+  <body>
+    <div class="sudoku-container">
+      <div class="sd-title">
+        <h2>
+          <em class="game-title" id="demo">Sudoku</em>
+          <span class="pz-game-date" id="date"></span>
+        </h2>
+      </div>
+      <div class="js-hookgame-wrapper" id="hookgame">
+        <div class="js-bg">
+          <div class="content-sequence-animation">
+            <div class="container-alternate">
+              <h2 class="title-large">Sudoku</h2>
+              <h3 class="description">Try this number game, minus the math</h3>
+              <span class="pz-description">choose your Puzzle:</span>
+            </div>
+          </div>
+          <div class="button-wrapper" id="primary">
+            <button
+              type="button"
+              class="primary-button"
+              onclick="loadContent()"
+            >
+              Easy
+            </button>
+            <button type="button" class="primary-button" id="button">
+              Medium
+            </button>
+            <button type="button" class="primary-button">Hard</button>
+            <button type="button" class="secondary-button">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

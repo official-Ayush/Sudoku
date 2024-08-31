@@ -1,0 +1,113 @@
+.sudoku-container{
+    padding: 0px;
+    /* margin-left: 40% ; */
+}
+
+.sd-title{
+    padding-left: 10%; 
+    /* background-color: #101820; */
+}
+
+.sd-title .game-title{
+    /* font-family: "nyt-karnakcondensed"; */
+    font-size: 42px;
+    /* color: white; */
+    font-weight: 700;
+    font-weight: bold;
+    margin-right: 16px;
+}
+
+.pz-game-date{
+    /* color: white; */
+    display: inline-block;
+        font-size: 28px;
+        font-weight: 300;
+        height: 1em;
+}
+
+.js-bg{
+    background-color: rgb(251, 155, 0);
+    /* background-color: #FEE715; */
+}
+
+.content-sequence-animation{
+    padding: 30px 15px;
+    /* justify-content: flex-start; */
+}
+
+.content-sequence-animation .container-alternate{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    position: relative;
+    padding: 0 15px;
+    height: 100%;
+}
+
+.container-alternate .title-large{
+    font-weight: 1200;
+    font-size: 40px;
+}
+
+.container-alternate .description{
+    font-weight: 500;
+    /* font-family: "NYT-Karnak"; */
+    line-height: 1.167;
+    margin-bottom: 20px;
+    font-size: 1.55em;
+    /* font-size: min(1.55em, 60px); */
+}
+
+ .pz-description{
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    line-height: 20px;
+    font-size: larger;
+}
+
+.button-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: space-around;
+    /* flex-wrap: nowrap; */
+    position: relative;
+    padding:0px 0px 30px 0;
+    height: 17em;
+    transition-delay: 2s;
+}
+
+.button-wrapper .primary-button{
+        border-radius: 20px;
+        background-color: black;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 20px;
+        color: white;
+        line-height: 1.15;
+        cursor: pointer;
+        width: 9em;
+}
+
+.button-wrapper .primary-button:hover{
+    background-color: white;
+    color: black;
+}
+
+.button-wrapper .secondary-button{
+    border-radius: 20px;
+    background-color: black;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 20px;
+    color: white;
+    line-height: 1.15;
+    cursor: pointer;
+    width: 9em;
+    background-color: rgb(251, 155, 0);
+}
+ 

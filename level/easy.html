@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/easy.css" />
+    <script src="../Script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="puzzle-game-toolbar">
+      <hr class="pz-hr" />
+      <div class="pz-row" id="portal-game-toolbar">
+        <div class="toolbar-left">
+          <button type="button" class="text-container">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span class="back-text"> <a href="index.html">Back</a></span>
+          </button>
+        </div>
+        <div class="toolbar-center">
+          <div class="level-desktop">Easy</div>
+          <div class="timer-desktop">
+            <div id="timerDisplay">00:00</div>
+            <button class="timer-pause" id="pauseButton">
+              <i class="fa-solid fa-pause"></i>
+            </button>
+          </div>
+        </div>
+        <div class="toolbar-right">
+          <button type="button" class="pz-toolbar-button">
+            <i class="fa-solid fa-question"></i>
+          </button>
+          <button type="button" class="pz-dropdown-button" aria-label="help">
+            <span class="pz-dropdown-label">
+              <i class="fa-solid fa-ellipsis"></i>
+            </span>
+          </button>
+        </div>
+      </div>
+      <hr />
+    </div>
+    <div class="pz-game-field" id="pz-game-root">
+      <div id="sudoku-board"></div>
+    </div>
+  </body>
+</html>
