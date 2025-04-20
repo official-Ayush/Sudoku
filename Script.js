@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function loadContent() {
   // Fetch the content of the "easy.html" file
-  fetch("../level/easy.html")
+  fetch("level/easy.html")
     // Convert the response to text
-    .then(response => response.text())
+ .then(response => response.text())
     // Set the content of the "hookgame" element to the fetched text
     .then(content => {
 
@@ -66,49 +66,49 @@ function loadContent() {
         
         function displaySudoku(puzzle, solution) {
           const boardElement = document.getElementById('sudoku-board');
-          boardElement.innerHTML = ''; // Clear the board
-
+          boardElement.innerHTML = '';
+        
           puzzle.forEach((row, rowIndex) => {
-              row.forEach((cell, cellIndex) => {
-                  const cellElement = document.createElement('div');
-                  cellElement.classList.add('cell');
-                  cellElement.textContent = cell !== 0 ? cell : ''; 
-                  
-                  // Display numbers, leave empty cells blank
-                  if (cell !== 0) {
-                      cellElement.contentEditable = false; 
-                      // Make pre-filled cells non-editable
-                  } else {
-                      cellElement.contentEditable = true; // Allow editing of empty cells
-                      cellElement.addEventListener('input', (event) => {
-                          const inputValue = event.target.textContent.trim(); // Get user input
-                          
-                          // Validate input: must be a number between 1 and 9
-                          if (inputValue === '' || !/^[1-9]$/.test(inputValue) ) {
-                              cellElement.classList.remove('correct', 'incorrect'); // Reset classes
-                              return; // Exit if invalid input
-                          }
-
-                          // Convert to integer for comparison
-                          const numericValue = parseInt(inputValue);
-
-                          // Check against solution
-                          if (numericValue === solution[rowIndex][cellIndex]) {
-                              cellElement.classList.add('correct');
-                              cellElement.classList.remove('incorrect');
-                          } else {
-                              cellElement.classList.add('incorrect');
-                              cellElement.classList.remove('correct');
-                          }
-                      });
+            row.forEach((cell, cellIndex) => {
+              const cellElement = document.createElement('div');
+              cellElement.classList.add('cell');
+              cellElement.textContent = Number(cell) !== 0 ? cell : '';
+        
+              if (cell !== 0) {
+                cellElement.contentEditable = false;
+              } else {
+                cellElement.contentEditable = true;
+                
+                // Add paste handler to block non-numeric pastes
+                cellElement.addEventListener('paste', (e) => e.preventDefault());
+        
+                cellElement.addEventListener('input', (event) => {
+                  let inputValue = event.target.textContent;
+        
+                  // Immediately sanitize input (remove non-digits, limit to 1 character)
+                  inputValue = inputValue.replace(/[^1-9]/g, '').slice(0, 1);
+                  event.target.textContent = inputValue;
+        
+                  if (!inputValue) {
+                    cellElement.classList.remove('correct', 'incorrect');
+                    return;
                   }
-                  boardElement.appendChild(cellElement);
-              });
+        
+                  const numericValue = parseInt(inputValue);
+                  if (numericValue === solution[rowIndex][cellIndex]) {
+                    cellElement.classList.add('correct');
+                    cellElement.classList.remove('incorrect');
+                  } else {
+                    cellElement.classList.add('incorrect');
+                    cellElement.classList.remove('correct');
+                  }
+                });
+              }
+              boardElement.appendChild(cellElement);
+            });
           });
-
-          // Add arrow key navigation
           addArrowKeyNavigation();
-      }
+        }
 
       function addArrowKeyNavigation() {
           const cells = document.querySelectorAll('.cell');
