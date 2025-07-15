@@ -80,12 +80,19 @@
     color: black;
     background-color: white;
 }
+.wrapper{
+    display: grid;
+  place-items: center ;     /* shortcut for justify + align center */
+  min-height: 10vh;
+  padding: 1rem;  
+  width: 100%;
+}
 
 .pz-game-field{
-    width: 30%;
-    margin-left: 15em;
-    /* display: inline-block; */
-    /* height: ; */
+     display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  max-width: 1200px;
 }
 
 /* Container for the Sudoku board */

@@ -88,7 +88,7 @@ function loadContent() {
                   // Immediately sanitize input (remove non-digits, limit to 1 character)
                   inputValue = inputValue.replace(/[^1-9]/g, '').slice(0, 1);
                   event.target.textContent = inputValue;
-        
+                  
                   if (!inputValue) {
                     cellElement.classList.remove('correct', 'incorrect');
                     return;
